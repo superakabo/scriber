@@ -1,110 +1,33 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:scriber/src/utilities/constants/font_variations.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:scriber/src/providers/authentication_provider.dart';
+import 'package:scriber/src/providers/locale_provider.dart';
+import 'package:scriber/src/providers/theme_mode_provider.dart';
+import 'package:scriber/src/routes.dart';
 
 import 'utilities/localizations/strings.dart';
-import 'utilities/miscellaneous/themes.dart';
+import '../themes.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends ConsumerWidget {
+  const App({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final authProvider = ref.watch(authenticationProvider);
+    final themeMode = ref.watch(themeModeProvider);
+    final locale = ref.watch(localeProvider);
+
     return MaterialApp(
-      restorationScopeId: 'app',
+      debugShowCheckedModeBanner: false,
+      locale: locale,
       supportedLocales: Strings.supportedLocales,
       localizationsDelegates: Strings.localizationsDelegates,
       onGenerateTitle: (context) => Strings.of(context)!.scriber,
+      onGenerateRoute: Routes.generateRoute,
+      initialRoute: Routes.initialRoute(authProvider.isLoggedIn),
       theme: Themes.light,
       darkTheme: Themes.dark,
-      themeMode: ThemeMode.system,
-      home: const MyWidget(),
-    );
-  }
-}
-
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'The Quick Brown Fox',
-              style: theme.textTheme.headlineLarge?.copyWith(
-                fontVariations: <FontVariation>[
-                  const FontVariation('wght', 200),
-                ],
-              ),
-            ),
-            Text(
-              'The Quick Brown Fox',
-              style: theme.textTheme.headlineLarge?.copyWith(
-                fontVariations: <FontVariation>[
-                  const FontVariation('wght', 300),
-                ],
-              ),
-            ),
-            Text(
-              'The Quick Brown Fox',
-              style: theme.textTheme.headlineLarge?.copyWith(
-                fontVariations: <FontVariation>[
-                  const FontVariation('wght', 400),
-                ],
-              ),
-            ),
-            Text(
-              'The Quick Brown Fox',
-              style: theme.textTheme.headlineLarge?.copyWith(
-                fontWeight: FontWeight.w500,
-                fontVariations: <FontVariation>[
-                  const FontVariation('wght', 500),
-                ],
-              ),
-            ),
-            Text(
-              'The Quick Brown Fox',
-              style: theme.textTheme.headlineLarge?.copyWith(
-                fontVariations: <FontVariation>[
-                  const FontVariation('wght', 600),
-                ],
-              ),
-            ),
-            Text(
-              'The Quick Brown Fox',
-              style: theme.textTheme.headlineLarge?.copyWith(
-                fontVariations: <FontVariation>[
-                  const FontVariation('wght', 700),
-                ],
-              ),
-            ),
-            Text(
-              'The Quick Brown Fox',
-              style: theme.textTheme.headlineLarge?.copyWith(
-                fontVariations: <FontVariation>[
-                  FontVariations.w800,
-                ],
-              ),
-            ),
-            Text(
-              'The Quick Brown Fox',
-              style: theme.textTheme.headlineLarge?.copyWith(
-                fontVariations: <FontVariation>[
-                  FontVariations.w900,
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+      themeMode: themeMode,
     );
   }
 }

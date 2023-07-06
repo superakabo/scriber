@@ -98,6 +98,180 @@ abstract class Strings {
   /// In en, this message translates to:
   /// **'Scriber'**
   String get scriber;
+
+  /// Oops
+  ///
+  /// In en, this message translates to:
+  /// **'Oops'**
+  String get oops;
+
+  /// Your account has been disabled. Please contact Scriber support for assistance.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account has been disabled.\nPlease contact Scriber support for assistance.'**
+  String get yourAccountHasBeenDisabled;
+
+  /// Please check your internet connection and try again.
+  ///
+  /// In en, this message translates to:
+  /// **'Please check your internet connection and try again.'**
+  String get pleaseCheckYourInternet;
+
+  /// Please cross-check your email address and try again
+  ///
+  /// In en, this message translates to:
+  /// **'Please cross-check your email address and try again.'**
+  String get pleaseCrosscheckYourEmailAddress;
+
+  /// Verification Cancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification Cancelled.'**
+  String get verificationCancelled;
+
+  /// Sign in cancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in cancelled.'**
+  String get signInCancelled;
+
+  /// Sign in with Google
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Google'**
+  String get signinWithGoogle;
+
+  /// Welcome
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome'**
+  String get welcome;
+
+  /// Never miss an opportunity to jot down your thoughts with Scriber.
+  ///
+  /// In en, this message translates to:
+  /// **'Never miss an opportunity to jot down your thoughts with Scriber.'**
+  String get neverMissAnOpportunity;
+
+  /// By continuing, you agree to our
+  ///
+  /// In en, this message translates to:
+  /// **'By continuing, you agree to our'**
+  String get byContinuingYouAgreeToOur;
+
+  /// Terms and Conditions
+  ///
+  /// In en, this message translates to:
+  /// **'Terms and Conditions'**
+  String get termsAndConditions;
+
+  /// OK
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// Press the back key again to exit the app.
+  ///
+  /// In en, this message translates to:
+  /// **'Press the back key again to exit the app.'**
+  String get pressTheBackKey;
+
+  /// Notes
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get notes;
+
+  /// Search
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
+
+  /// Settings
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// Create your first note!
+  ///
+  /// In en, this message translates to:
+  /// **'Create your first note!'**
+  String get createYourFirstNote;
+
+  /// Close
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get close;
+
+  /// Sign out
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get signOut;
+
+  /// Languages
+  ///
+  /// In en, this message translates to:
+  /// **'Languages'**
+  String get languages;
+
+  /// Themes
+  ///
+  /// In en, this message translates to:
+  /// **'Themes'**
+  String get themes;
+
+  /// Default Theme
+  ///
+  /// In en, this message translates to:
+  /// **'Default Theme'**
+  String get defaultTheme;
+
+  /// Light Theme
+  ///
+  /// In en, this message translates to:
+  /// **'Light Theme'**
+  String get lightTheme;
+
+  /// Dark Theme
+  ///
+  /// In en, this message translates to:
+  /// **'Dark Theme'**
+  String get darkTheme;
+
+  /// Switch between light and dark themes.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch between light and dark themes.'**
+  String get switchBetweenLightAndDark;
+
+  /// Default Language
+  ///
+  /// In en, this message translates to:
+  /// **'Default Language'**
+  String get defaultLanguage;
+
+  /// English
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get english;
+
+  /// French
+  ///
+  /// In en, this message translates to:
+  /// **'French'**
+  String get french;
+
+  /// Switch between English and French languages.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch between English and French languages.'**
+  String get switchBetweenEnglishAndFrench;
 }
 
 class _StringsDelegate extends LocalizationsDelegate<Strings> {

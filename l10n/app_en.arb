@@ -3,5 +3,121 @@
   "scriber": "Scriber",
   "@scriber": {
     "description": "Scriber"
+  },
+  "oops": "Oops",
+  "@oops": {
+    "description": "Oops"
+  },
+  "yourAccountHasBeenDisabled": "Your account has been disabled.\nPlease contact Scriber support for assistance.",
+  "@yourAccountHasBeenDisabled": {
+    "description": "Your account has been disabled. Please contact Scriber support for assistance."
+  },
+  "pleaseCheckYourInternet": "Please check your internet connection and try again.",
+  "@pleaseCheckYourInternet": {
+    "description": "Please check your internet connection and try again."
+  },
+  "pleaseCrosscheckYourEmailAddress": "Please cross-check your email address and try again.",
+  "@pleaseCrosscheckYourEmailAddress": {
+    "description": "Please cross-check your email address and try again"
+  },
+  "verificationCancelled": "Verification Cancelled.",
+  "@verificationCancelled": {
+    "description": "Verification Cancelled."
+  },
+  "signInCancelled": "Sign in cancelled.",
+  "@signInCancelled": {
+    "description": "Sign in cancelled."
+  },
+  "signinWithGoogle": "Sign in with Google",
+  "@signinWithGoogle": {
+    "description": "Sign in with Google"
+  },
+  "welcome": "Welcome",
+  "@welcome": {
+    "description": "Welcome"
+  },
+  "neverMissAnOpportunity": "Never miss an opportunity to jot down your thoughts with Scriber.",
+  "@neverMissAnOpportunity": {
+    "description": "Never miss an opportunity to jot down your thoughts with Scriber."
+  },
+  "byContinuingYouAgreeToOur": "By continuing, you agree to our",
+  "@byContinuingYouAgreeToOur": {
+    "description": "By continuing, you agree to our"
+  },
+  "termsAndConditions": "Terms and Conditions",
+  "@termsAndConditions": {
+    "description": "Terms and Conditions"
+  },
+  "ok": "OK",
+  "@ok": {
+    "description": "OK"
+  },
+  "pressTheBackKey": "Press the back key again to exit the app.",
+  "@pressTheBackKey": {
+    "description": "Press the back key again to exit the app."
+  },
+  "notes": "Notes",
+  "@notes": {
+    "description": "Notes"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Search"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings"
+  },
+  "createYourFirstNote": "Create your first note!",
+  "@createYourFirstNote": {
+    "description": "Create your first note!"
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Close"
+  },
+  "signOut": "Sign out",
+  "@signOut": {
+    "description": "Sign out"
+  },
+  "languages": "Languages",
+  "@languages": {
+    "description": "Languages"
+  },
+  "themes": "Themes",
+  "@themes": {
+    "description": "Themes"
+  },
+  "defaultTheme": "Default Theme",
+  "@defaultTheme": {
+    "description": "Default Theme"
+  },
+  "lightTheme": "Light Theme",
+  "@lightTheme": {
+    "description": "Light Theme"
+  },
+  "darkTheme": "Dark Theme",
+  "@darkTheme": {
+    "description": "Dark Theme"
+  },
+  "switchBetweenLightAndDark": "Switch between light and dark themes.",
+  "@switchBetweenLightAndDark": {
+    "description": "Switch between light and dark themes."
+  },
+  "defaultLanguage": "Default Language",
+  "@defaultLanguage": {
+    "description": "Default Language"
+  },
+  "english": "English",
+  "@english": {
+    "description": "English"
+  },
+  "french": "French",
+  "@french": {
+    "description": "French"
+  },
+  "switchBetweenEnglishAndFrench": "Switch between English and French languages.",
+  "@switchBetweenEnglishAndFrench": {
+    "description": "Switch between English and French languages."
   }
 }

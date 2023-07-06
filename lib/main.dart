@@ -1,8 +1,30 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'firebase_options.dart';
 import 'src/app.dart';
 
-void main() async {
-  runApp(const ProviderScope(child: MyApp()));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await _initFirebase();
+  runApp(const ProviderScope(child: App()));
+}
+
+Future<void> _initFirebase() async {
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FirebaseAppCheck.instance.activate();
+
+  FlutterError.onError = (details) async {
+    FlutterError.presentError(details);
+    await FirebaseCrashlytics.instance.recordFlutterError(details);
+  };
+
+  PlatformDispatcher.instance.onError = (exception, stackTrace) {
+    FirebaseCrashlytics.instance.recordError(exception, stackTrace);
+    return true;
+  };
 }
