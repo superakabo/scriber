@@ -1,0 +1,6 @@
+synthetic-package: false
+template-arb-file: app_en.arb
+arb-dir: l10n
+output-dir: lib/src/utilities/localizations
+output-localization-file: strings.dart
+output-class: Strings
