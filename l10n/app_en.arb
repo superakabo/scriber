@@ -76,6 +76,22 @@
   "@close": {
     "description": "Close"
   },
+  "back": "Back",
+  "@back": {
+    "description": "Back"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save"
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete"
+  },
+  "edit": "Edit",
+  "@edit": {
+    "description": "Edit"
+  },
   "signOut": "Sign out",
   "@signOut": {
     "description": "Sign out"
@@ -119,5 +135,53 @@
   "switchBetweenEnglishAndFrench": "Switch between English and French languages.",
   "@switchBetweenEnglishAndFrench": {
     "description": "Switch between English and French languages."
+  },
+  "title": "Title",
+  "@title": {
+    "description": "Title"
+  },
+  "typeSomething": "Type something...",
+  "@typeSomething": {
+    "description": "Type something..."
+  },
+  "titleCannotBeEmpty": "Title cannot be empty.",
+  "@titleCannotBeEmpty": {
+    "description": "Title cannot be empty."
+  },
+  "bodyCannotBeEmpty": "Body cannot be empty.",
+  "@bodyCannotBeEmpty": {
+    "description": "Body cannot be empty."
+  },
+  "deleteNote": "Delete Note",
+  "@deleteNote": {
+    "description": "Delete Note"
+  },
+  "thisActionIsIrreversible": "This action is irreversible. Proceed?",
+  "@thisActionIsIrreversible": {
+    "description": "This action is irreversible. Proceed?"
+  },
+  "yesDeleteIt": "Yes, delete it.",
+  "@yesDeleteIt": {
+    "description": "Yes, delete it."
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel"
+  },
+  "unsavedChanges": "Unsaved Changes",
+  "@unsavedChanges": {
+    "description": "Unsaved Changes"
+  },
+  "doYouWantToSaveYourChanges": "Do you want to save your changes?",
+  "@doYouWantToSaveYourChanges": {
+    "description": "Do you want to save your changes?"
+  },
+  "discard": "Discard",
+  "@discard": {
+    "description": "Discard"
+  },
+  "areYouSureYouWantToDiscard": "Are your sure you want to discard your changes?",
+  "@areYouSureYouWantToDiscard": {
+    "description": "Are your sure you want to discard your changes?"
   }
 }

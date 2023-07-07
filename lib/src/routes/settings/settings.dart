@@ -68,8 +68,8 @@ class Settings extends HookConsumerWidget {
           leading: IconButton.filledTonal(
             splashRadius: 24,
             iconSize: 20,
-            icon: const Icon(Icons.close),
-            tooltip: strings.close,
+            icon: const Icon(Icons.arrow_back_ios_new),
+            tooltip: strings.back,
             constraints: const BoxConstraints(
               maxHeight: 48,
               maxWidth: 48,

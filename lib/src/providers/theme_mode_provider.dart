@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../utilities/constants/properties.dart';
 
-final themeModeProvider = StateNotifierProvider.autoDispose<_StateNotifier, ThemeMode>((ref) {
+final themeModeProvider = StateNotifierProvider<_StateNotifier, ThemeMode>((ref) {
   final prefs = ref.watch(sharedPreferencesProvider);
   final index = prefs?.getInt(Properties.themeMode) ?? 0;
   final themeMode = ThemeMode.values.elementAt(index);

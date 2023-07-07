@@ -207,6 +207,30 @@ abstract class Strings {
   /// **'Close'**
   String get close;
 
+  /// Back
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
+
+  /// Save
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// Delete
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// Edit
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
   /// Sign out
   ///
   /// In en, this message translates to:
@@ -272,6 +296,78 @@ abstract class Strings {
   /// In en, this message translates to:
   /// **'Switch between English and French languages.'**
   String get switchBetweenEnglishAndFrench;
+
+  /// Title
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get title;
+
+  /// Type something...
+  ///
+  /// In en, this message translates to:
+  /// **'Type something...'**
+  String get typeSomething;
+
+  /// Title cannot be empty.
+  ///
+  /// In en, this message translates to:
+  /// **'Title cannot be empty.'**
+  String get titleCannotBeEmpty;
+
+  /// Body cannot be empty.
+  ///
+  /// In en, this message translates to:
+  /// **'Body cannot be empty.'**
+  String get bodyCannotBeEmpty;
+
+  /// Delete Note
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Note'**
+  String get deleteNote;
+
+  /// This action is irreversible. Proceed?
+  ///
+  /// In en, this message translates to:
+  /// **'This action is irreversible. Proceed?'**
+  String get thisActionIsIrreversible;
+
+  /// Yes, delete it.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, delete it.'**
+  String get yesDeleteIt;
+
+  /// Cancel
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// Unsaved Changes
+  ///
+  /// In en, this message translates to:
+  /// **'Unsaved Changes'**
+  String get unsavedChanges;
+
+  /// Do you want to save your changes?
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to save your changes?'**
+  String get doYouWantToSaveYourChanges;
+
+  /// Discard
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get discard;
+
+  /// Are your sure you want to discard your changes?
+  ///
+  /// In en, this message translates to:
+  /// **'Are your sure you want to discard your changes?'**
+  String get areYouSureYouWantToDiscard;
 }
 
 class _StringsDelegate extends LocalizationsDelegate<Strings> {

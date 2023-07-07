@@ -211,6 +211,8 @@ class _InfoWidget extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
                       fixedSize: const Size.fromHeight(48),
+                      backgroundColor: theme.colorScheme.primary,
+                      foregroundColor: theme.colorScheme.onPrimary,
                       textStyle: theme.textTheme.bodyLarge?.copyWith(
                         fontVariations: [
                           FontVariations.w500,
@@ -234,7 +236,8 @@ class _InfoWidget extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
                       fixedSize: const Size.fromHeight(48),
-                      backgroundColor: theme.colorScheme.tertiary,
+                      backgroundColor: theme.colorScheme.secondary,
+                      foregroundColor: theme.colorScheme.onSecondary,
                       textStyle: theme.textTheme.bodyLarge?.copyWith(
                         fontVariations: [
                           FontVariations.w500,

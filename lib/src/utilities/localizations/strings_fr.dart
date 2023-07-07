@@ -11,76 +11,88 @@ class StringsFr extends Strings {
   String get oops => 'Oops';
 
   @override
-  String get yourAccountHasBeenDisabled => 'Your account has been disabled.\nPlease contact Scriber support for assistance.';
+  String get yourAccountHasBeenDisabled => 'Votre compte a été désactivé.\nVeuillez contacter l\'assistance Scriber pour obtenir de l\'aide.';
 
   @override
-  String get pleaseCheckYourInternet => 'Please check your internet connection and try again.';
+  String get pleaseCheckYourInternet => 'S\'il vous plaît, vérifiez votre connexion à internet et réessayez.';
 
   @override
-  String get pleaseCrosscheckYourEmailAddress => 'Please cross-check your email address and try again.';
+  String get pleaseCrosscheckYourEmailAddress => 'Veuillez recouper votre adresse e-mail et réessayer.';
 
   @override
-  String get verificationCancelled => 'Verification Cancelled.';
+  String get verificationCancelled => 'Vérification annulée.';
 
   @override
-  String get signInCancelled => 'Sign in cancelled.';
+  String get signInCancelled => 'Connexion annulée.';
 
   @override
-  String get signinWithGoogle => 'Sign in with Google';
+  String get signinWithGoogle => 'Connectez-vous avec Google';
 
   @override
-  String get welcome => 'Welcome';
+  String get welcome => 'Bienvenu';
 
   @override
-  String get neverMissAnOpportunity => 'Never miss an opportunity to jot down your thoughts with Scriber.';
+  String get neverMissAnOpportunity => 'Ne manquez jamais une occasion de noter vos pensées avec Scriber.';
 
   @override
-  String get byContinuingYouAgreeToOur => 'By continuing, you agree to our';
+  String get byContinuingYouAgreeToOur => 'En continuant, vous acceptez nos';
 
   @override
-  String get termsAndConditions => 'Terms and Conditions';
+  String get termsAndConditions => 'Termes et conditions';
 
   @override
-  String get ok => 'OK';
+  String get ok => 'D\'accord';
 
   @override
-  String get pressTheBackKey => 'Press the back key again to exit the app.';
+  String get pressTheBackKey => 'Appuyez à nouveau sur la touche de retour pour quitter l\'application.';
 
   @override
-  String get notes => 'Notes';
+  String get notes => 'Remarques';
 
   @override
-  String get search => 'Search';
+  String get search => 'Recherche';
 
   @override
-  String get settings => 'Settings';
+  String get settings => 'Paramètres';
 
   @override
-  String get createYourFirstNote => 'Create your first note!';
+  String get createYourFirstNote => 'Créez votre première note!';
 
   @override
-  String get close => 'Close';
+  String get close => 'Fermer';
 
   @override
-  String get signOut => 'Sign out';
+  String get back => 'Dos';
 
   @override
-  String get languages => 'Languages';
+  String get save => 'Sauvegarder';
 
   @override
-  String get themes => 'Themes';
+  String get delete => 'Supprimer';
 
   @override
-  String get defaultTheme => 'Default Theme';
+  String get edit => 'Modifier';
 
   @override
-  String get lightTheme => 'Light Theme';
+  String get signOut => 'Se déconnecter';
 
   @override
-  String get darkTheme => 'Dark Theme';
+  String get languages => 'Langages';
 
   @override
-  String get switchBetweenLightAndDark => 'Switch between light and dark themes.';
+  String get themes => 'Thèmes';
+
+  @override
+  String get defaultTheme => 'Thème par défaut';
+
+  @override
+  String get lightTheme => 'Thème Lumière';
+
+  @override
+  String get darkTheme => 'Thème sombre';
+
+  @override
+  String get switchBetweenLightAndDark => 'Basculez entre les thèmes clairs et sombres.';
 
   @override
   String get defaultLanguage => 'Langage par défaut';
@@ -92,5 +104,41 @@ class StringsFr extends Strings {
   String get french => 'Français';
 
   @override
-  String get switchBetweenEnglishAndFrench => 'Switch between English and French languages.';
+  String get switchBetweenEnglishAndFrench => 'Basculer entre les langues anglaise et française.';
+
+  @override
+  String get title => 'Titre';
+
+  @override
+  String get typeSomething => 'Tapez quelque chose...';
+
+  @override
+  String get titleCannotBeEmpty => 'Le titre ne peut pas être vide.';
+
+  @override
+  String get bodyCannotBeEmpty => 'Le corps ne peut pas être vide.';
+
+  @override
+  String get deleteNote => 'Delete Note';
+
+  @override
+  String get thisActionIsIrreversible => 'Cette action est irréversible. Procéder?';
+
+  @override
+  String get yesDeleteIt => 'Oui, supprimez-le.';
+
+  @override
+  String get cancel => 'Annuler';
+
+  @override
+  String get unsavedChanges => 'Modifications non enregistrées';
+
+  @override
+  String get doYouWantToSaveYourChanges => 'Voulez-vous enregistrer vos modifications?';
+
+  @override
+  String get discard => 'Jeter';
+
+  @override
+  String get areYouSureYouWantToDiscard => 'Voulez-vous vraiment annuler vos modifications?';
 }

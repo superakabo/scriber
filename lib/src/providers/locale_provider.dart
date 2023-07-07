@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../utilities/constants/properties.dart';
 
-final localeProvider = StateNotifierProvider.autoDispose<_StateNotifier, Locale>((ref) {
+final localeProvider = StateNotifierProvider<_StateNotifier, Locale>((ref) {
   final prefs = ref.watch(sharedPreferencesProvider);
   final code = prefs?.getString(Properties.languageCode) ?? PlatformDispatcher.instance.locale.languageCode;
   return _StateNotifier(prefs, Locale(code));

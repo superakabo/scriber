@@ -62,6 +62,18 @@ class StringsEn extends Strings {
   String get close => 'Close';
 
   @override
+  String get back => 'Back';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
   String get signOut => 'Sign out';
 
   @override
@@ -93,4 +105,40 @@ class StringsEn extends Strings {
 
   @override
   String get switchBetweenEnglishAndFrench => 'Switch between English and French languages.';
+
+  @override
+  String get title => 'Title';
+
+  @override
+  String get typeSomething => 'Type something...';
+
+  @override
+  String get titleCannotBeEmpty => 'Title cannot be empty.';
+
+  @override
+  String get bodyCannotBeEmpty => 'Body cannot be empty.';
+
+  @override
+  String get deleteNote => 'Delete Note';
+
+  @override
+  String get thisActionIsIrreversible => 'This action is irreversible. Proceed?';
+
+  @override
+  String get yesDeleteIt => 'Yes, delete it.';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get unsavedChanges => 'Unsaved Changes';
+
+  @override
+  String get doYouWantToSaveYourChanges => 'Do you want to save your changes?';
+
+  @override
+  String get discard => 'Discard';
+
+  @override
+  String get areYouSureYouWantToDiscard => 'Are your sure you want to discard your changes?';
 }

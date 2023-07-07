@@ -12,30 +12,32 @@ class NoNote extends StatelessWidget {
     final theme = Theme.of(context);
     final strings = Strings.of(context)!;
 
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.only(
-          left: 32,
-          right: 32,
-          bottom: kToolbarHeight,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            AspectRatio(
-              aspectRatio: 1,
-              child: Image.asset(Images.createNote),
-            ),
-            Text(
-              strings.createYourFirstNote,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.titleLarge?.copyWith(
-                fontSize: 20,
-                fontVariations: [FontVariations.w200],
+    return SafeArea(
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 32,
+            right: 32,
+            bottom: kToolbarHeight,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              AspectRatio(
+                aspectRatio: 1,
+                child: Image.asset(Images.createNote),
               ),
-            ),
-          ],
+              Text(
+                strings.createYourFirstNote,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.titleLarge?.copyWith(
+                  fontSize: 20,
+                  fontVariations: [FontVariations.w200],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
