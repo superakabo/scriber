@@ -180,8 +180,12 @@
   "@discard": {
     "description": "Discard"
   },
-  "areYouSureYouWantToDiscard": "Are your sure you want to discard your changes?",
-  "@areYouSureYouWantToDiscard": {
-    "description": "Are your sure you want to discard your changes?"
+  "searchByTheKeyword": "Search by the keyword...",
+  "@searchByTheKeyword": {
+    "description": "Search by the keyword..."
+  },
+  "noteNotFound": "Note not found. Try a different keyword.",
+  "@noteNotFound": {
+    "description": "Note not found. Try a different keyword."
   }
 }

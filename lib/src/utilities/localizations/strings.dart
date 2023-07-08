@@ -363,11 +363,17 @@ abstract class Strings {
   /// **'Discard'**
   String get discard;
 
-  /// Are your sure you want to discard your changes?
+  /// Search by the keyword...
   ///
   /// In en, this message translates to:
-  /// **'Are your sure you want to discard your changes?'**
-  String get areYouSureYouWantToDiscard;
+  /// **'Search by the keyword...'**
+  String get searchByTheKeyword;
+
+  /// Note not found. Try a different keyword.
+  ///
+  /// In en, this message translates to:
+  /// **'Note not found. Try a different keyword.'**
+  String get noteNotFound;
 }
 
 class _StringsDelegate extends LocalizationsDelegate<Strings> {

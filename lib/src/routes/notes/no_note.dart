@@ -5,12 +5,32 @@ import '../../utilities/constants/svgs.dart';
 import '../../utilities/localizations/strings.dart';
 
 class NoNote extends StatelessWidget {
-  const NoNote({super.key});
+  final String image;
+  final String caption;
+
+  const NoNote({
+    required this.image,
+    required this.caption,
+    super.key,
+  });
+
+  factory NoNote.allNotes(Strings strings) {
+    return NoNote(
+      image: Images.createNote,
+      caption: strings.createYourFirstNote,
+    );
+  }
+
+  factory NoNote.search(Strings strings) {
+    return NoNote(
+      image: Images.searchAgain,
+      caption: strings.noteNotFound,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final strings = Strings.of(context)!;
 
     return SafeArea(
       child: Center(
@@ -26,10 +46,10 @@ class NoNote extends StatelessWidget {
             children: [
               AspectRatio(
                 aspectRatio: 1,
-                child: Image.asset(Images.createNote),
+                child: Image.asset(image),
               ),
               Text(
-                strings.createYourFirstNote,
+                caption,
                 textAlign: TextAlign.center,
                 style: theme.textTheme.titleLarge?.copyWith(
                   fontSize: 20,

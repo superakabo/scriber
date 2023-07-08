@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scriber/src/models/notes_model.dart';
 import 'package:scriber/src/providers/notes_provider.dart';
 import 'package:scriber/src/utilities/constants/font_variations.dart';
+import 'package:scriber/themes.dart';
 
 import '../../routes.dart';
 import '../../utilities/localizations/strings.dart';
@@ -15,22 +16,12 @@ import 'notes_card.dart';
 class Notes extends HookConsumerWidget {
   const Notes({super.key});
 
-  List<Color> get _cardColors {
-    return const [
-      Color(0XFFFD99FF),
-      Color(0XFFFF9E9E),
-      Color(0XFF91F48F),
-      Color(0XFFFFF599),
-      Color(0XFF9EFFFF),
-      Color(0XFFB69CFF),
-    ];
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final navigator = Navigator.of(context);
     final strings = Strings.of(context)!;
+    final cardColors = theme.extension<CardColors>()!.colors;
 
     final (:notes, :loading) = ref.watch(notesProvider);
     final setNotes = ref.watch(notesProvider.notifier);
@@ -56,7 +47,7 @@ class Notes extends HookConsumerWidget {
               ),
               actions: [
                 ...[
-                  (icon: Icons.search, tooltip: strings.search, route: Routes.signInWithGoogle.path),
+                  (icon: Icons.search, tooltip: strings.search, route: Routes.searchNote.path),
                   (icon: Icons.settings, tooltip: strings.settings, route: Routes.settings.path),
                 ].map((e) {
                   return IconButton.filledTonal(
@@ -90,20 +81,27 @@ class Notes extends HookConsumerWidget {
               onRefresh: setNotes.load,
             ),
             if (notes.isEmpty && !loading)
-              const SliverFillRemaining(
+              SliverFillRemaining(
                 hasScrollBody: false,
-                child: NoNote(),
+                child: NoNote.allNotes(strings),
+              )
+            else if (notes.isEmpty && loading)
+              SliverPadding(
+                padding: const EdgeInsets.all(24),
+                sliver: SliverList.builder(
+                  itemCount: 10,
+                  itemBuilder: (_, __) => const NotesCardShimmer(),
+                ),
               )
             else
               SliverPadding(
                 padding: const EdgeInsets.all(24),
                 sliver: SliverList.separated(
-                  itemCount: (loading) ? 10 : notes.length,
+                  itemCount: notes.length,
                   itemBuilder: (context, index) {
-                    if (loading) return const NotesCardShimmer();
                     return NotesCard(
                       note: notes[index],
-                      color: _cardColors[index % _cardColors.length],
+                      color: cardColors[index % cardColors.length],
                     );
                   },
                   separatorBuilder: (context, index) {

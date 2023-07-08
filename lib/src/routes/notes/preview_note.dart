@@ -11,10 +11,10 @@ import '../../routes.dart';
 import '../../utilities/constants/font_variations.dart';
 import '../../utilities/localizations/strings.dart';
 
-class PreviewNotes extends HookConsumerWidget {
+class PreviewNote extends HookConsumerWidget {
   final NotesModel note;
 
-  const PreviewNotes({
+  const PreviewNote({
     required this.note,
     super.key,
   });

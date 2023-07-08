@@ -140,5 +140,8 @@ class StringsFr extends Strings {
   String get discard => 'Jeter';
 
   @override
-  String get areYouSureYouWantToDiscard => 'Voulez-vous vraiment annuler vos modifications?';
+  String get searchByTheKeyword => 'Recherche par mot clé...';
+
+  @override
+  String get noteNotFound => 'Remarque introuvable. Essayez un autre mot-clé.';
 }

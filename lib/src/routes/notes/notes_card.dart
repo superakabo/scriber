@@ -1,4 +1,3 @@
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -27,7 +26,7 @@ class NotesCard extends StatelessWidget {
       ),
       child: DecoratedBox(
         decoration: ShapeDecoration(
-          color: theme.brightness == Brightness.light ? color : color.darken(50),
+          color: color,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),

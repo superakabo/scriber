@@ -140,5 +140,8 @@ class StringsEn extends Strings {
   String get discard => 'Discard';
 
   @override
-  String get areYouSureYouWantToDiscard => 'Are your sure you want to discard your changes?';
+  String get searchByTheKeyword => 'Search by the keyword...';
+
+  @override
+  String get noteNotFound => 'Note not found. Try a different keyword.';
 }

@@ -5,7 +5,8 @@ import 'package:scriber/src/routes/authentication/sign_in_with_google.dart';
 
 import 'routes/notes/create_note.dart';
 import 'routes/notes/notes.dart';
-import 'routes/notes/preview_notes.dart';
+import 'routes/notes/preview_note.dart';
+import 'routes/notes/search_notes.dart';
 import 'routes/settings/settings.dart';
 
 class Routes {
@@ -31,9 +32,15 @@ class Routes {
 
   static final previewNote = _RouteConfig(
     path: '/preview-note',
-    builder: (args) => PreviewNotes(
+    builder: (args) => PreviewNote(
       note: args as NotesModel,
     ),
+  );
+
+  static final searchNote = _RouteConfig(
+    path: '/search-note',
+    noTransition: true,
+    builder: (args) => const SearchNotes(),
   );
 
   static final settings = _RouteConfig(
@@ -48,6 +55,7 @@ class Routes {
       createNote,
       settings,
       previewNote,
+      searchNote,
     ];
   }
 

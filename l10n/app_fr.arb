@@ -45,5 +45,6 @@
   "unsavedChanges": "Modifications non enregistrées",
   "doYouWantToSaveYourChanges": "Voulez-vous enregistrer vos modifications?",
   "discard": "Jeter",
-  "areYouSureYouWantToDiscard": "Voulez-vous vraiment annuler vos modifications?"
+  "searchByTheKeyword": "Recherche par mot clé...",
+  "noteNotFound": "Remarque introuvable. Essayez un autre mot-clé."
 }
