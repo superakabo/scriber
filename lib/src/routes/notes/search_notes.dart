@@ -6,6 +6,7 @@ import 'package:scriber/src/providers/notes_provider.dart';
 
 import '../../../themes.dart';
 import '../../utilities/localizations/strings.dart';
+import '../../widgets/app_bar_button.dart';
 import 'no_note.dart';
 import 'notes_card.dart';
 
@@ -24,26 +25,10 @@ class SearchNotes extends HookConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leadingWidth: 68,
-        leading: IconButton.filledTonal(
-          splashRadius: 24,
-          iconSize: 20,
-          icon: const Icon(Icons.arrow_back_ios_new),
+        leadingWidth: 80,
+        leading: AppBarButton(
+          icon: Icons.arrow_back_ios_new,
           tooltip: strings.back,
-          constraints: const BoxConstraints(
-            maxHeight: 48,
-            maxWidth: 48,
-          ),
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(
-              theme.colorScheme.onBackground.withOpacity(0.2),
-            ),
-            shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-          ),
           onPressed: navigator.pop,
         ),
         bottom: SearchBar(
@@ -112,7 +97,7 @@ class SearchBar extends HookConsumerWidget implements PreferredSizeWidget {
     final controller = useTextEditingController();
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: TextField(
         controller: controller,
         style: theme.textTheme.bodyMedium,

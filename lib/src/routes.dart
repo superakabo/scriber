@@ -1,12 +1,13 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:scriber/src/models/notes_model.dart';
-import 'package:scriber/src/routes/authentication/sign_in_with_google.dart';
 
+import 'routes/authentication/sign_in_with_google.dart';
 import 'routes/notes/create_note.dart';
 import 'routes/notes/notes.dart';
 import 'routes/notes/preview_note.dart';
 import 'routes/notes/search_notes.dart';
+import 'routes/settings/about_scriber.dart';
 import 'routes/settings/settings.dart';
 
 class Routes {
@@ -48,14 +49,20 @@ class Routes {
     builder: (args) => const Settings(),
   );
 
+  static final aboutScriber = _RouteConfig(
+    path: '/about-scriber',
+    builder: (args) => const AboutScriber(),
+  );
+
   static List<_RouteConfig> get _values {
     return [
       signInWithGoogle,
       notes,
       createNote,
-      settings,
       previewNote,
       searchNote,
+      settings,
+      aboutScriber,
     ];
   }
 
@@ -76,7 +83,7 @@ class Routes {
           fullscreenDialog: routeModel.fullscreen,
           pageBuilder: (context, animation, secondaryAnimation) {
             return FadeTransition(
-              opacity: CurvedAnimation(parent: animation, curve: Curves.easeOut),
+              opacity: CurvedAnimation(parent: animation, curve: Curves.easeInOut),
               child: routeModel.builder(settings.arguments),
             );
           },

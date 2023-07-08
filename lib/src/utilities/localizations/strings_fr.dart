@@ -119,6 +119,9 @@ class StringsFr extends Strings {
   String get bodyCannotBeEmpty => 'Le corps ne peut pas être vide.';
 
   @override
+  String get createNote => 'Créer une note';
+
+  @override
   String get deleteNote => 'Delete Note';
 
   @override
@@ -144,4 +147,37 @@ class StringsFr extends Strings {
 
   @override
   String get noteNotFound => 'Remarque introuvable. Essayez un autre mot-clé.';
+
+  @override
+  String get aboutScriber => 'À propos de Scriber';
+
+  @override
+  String designedBy(String name) {
+    return 'Conçu par: $name';
+  }
+
+  @override
+  String redesignedBy(String name) {
+    return 'Redessiné par: $name';
+  }
+
+  @override
+  String illustrationsBy(String name) {
+    return 'Illustrations par: $name';
+  }
+
+  @override
+  String iconsBy(String name) {
+    return 'Icônes par: $name';
+  }
+
+  @override
+  String fontBy(String name) {
+    return 'Police by: $name';
+  }
+
+  @override
+  String madeWithFlutter(String name) {
+    return 'Réalisé avec Flutter 💙 par: $name';
+  }
 }

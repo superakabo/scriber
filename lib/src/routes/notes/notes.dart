@@ -10,6 +10,7 @@ import 'package:scriber/themes.dart';
 
 import '../../routes.dart';
 import '../../utilities/localizations/strings.dart';
+import '../../widgets/app_bar_button.dart';
 import 'no_note.dart';
 import 'notes_card.dart';
 
@@ -39,6 +40,7 @@ class Notes extends HookConsumerWidget {
           slivers: [
             SliverAppBar(
               pinned: true,
+              titleSpacing: 24,
               title: Text(
                 strings.notes,
                 style: theme.textTheme.headlineLarge?.copyWith(
@@ -50,30 +52,14 @@ class Notes extends HookConsumerWidget {
                   (icon: Icons.search, tooltip: strings.search, route: Routes.searchNote.path),
                   (icon: Icons.settings, tooltip: strings.settings, route: Routes.settings.path),
                 ].map((e) {
-                  return IconButton.filledTonal(
-                    splashRadius: 24,
-                    iconSize: 20,
-                    icon: Icon(e.icon),
+                  return AppBarButton(
+                    icon: e.icon,
                     tooltip: e.tooltip,
-                    constraints: const BoxConstraints(
-                      maxHeight: 48,
-                      maxWidth: 48,
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                        theme.colorScheme.onBackground.withOpacity(0.2),
-                      ),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
                     onPressed: () => navigator.pushNamed(e.route),
                   );
                 }),
                 const Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: EdgeInsets.only(right: 18),
                 ),
               ],
             ),
@@ -88,9 +74,14 @@ class Notes extends HookConsumerWidget {
             else if (notes.isEmpty && loading)
               SliverPadding(
                 padding: const EdgeInsets.all(24),
-                sliver: SliverList.builder(
+                sliver: SliverList.separated(
                   itemCount: 10,
                   itemBuilder: (_, __) => const NotesCardShimmer(),
+                  separatorBuilder: (context, index) {
+                    return const Padding(
+                      padding: EdgeInsets.only(bottom: 24),
+                    );
+                  },
                 ),
               )
             else
@@ -114,6 +105,7 @@ class Notes extends HookConsumerWidget {
           ],
         ),
         floatingActionButton: FloatingActionButton(
+          tooltip: strings.createNote,
           child: const Icon(Icons.add, size: 32),
           onPressed: () => navigator.pushNamed(
             Routes.createNote.path,

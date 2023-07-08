@@ -152,6 +152,10 @@
   "@bodyCannotBeEmpty": {
     "description": "Body cannot be empty."
   },
+  "createNote": "Create Note",
+  "@createNote": {
+    "description": "Create Note"
+  },
   "deleteNote": "Delete Note",
   "@deleteNote": {
     "description": "Delete Note"
@@ -187,5 +191,63 @@
   "noteNotFound": "Note not found. Try a different keyword.",
   "@noteNotFound": {
     "description": "Note not found. Try a different keyword."
+  },
+  "aboutScriber": "About Scriber",
+  "@aboutScriber": {
+    "description": "About Scriber"
+  },
+  "designedBy": "Designed by: {name}",
+  "@designedBy": {
+    "description": "Designed by: Samuel Akabo",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "redesignedBy": "Redesigned by: {name}",
+  "@redesignedBy": {
+    "description": "Redesigned by: Samuel Akabo",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "illustrationsBy": "Illustrations by: {name}",
+  "@illustrationsBy": {
+    "description": "Illustrations by: Samuel Akabo",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "iconsBy": "Icons by: {name}",
+  "@iconsBy": {
+    "description": "Icons by: Samuel Akabo",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "fontBy": "Font by: {name}",
+  "@fontBy": {
+    "description": "Font by: Samuel Akabo",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "madeWithFlutter": "Made with Flutter 💙 by: {name}",
+  "@madeWithFlutter": {
+    "description": "Made with Flutter 💙 by: Samuel Akabo",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   }
 }

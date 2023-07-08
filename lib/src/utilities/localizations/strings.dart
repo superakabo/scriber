@@ -321,6 +321,12 @@ abstract class Strings {
   /// **'Body cannot be empty.'**
   String get bodyCannotBeEmpty;
 
+  /// Create Note
+  ///
+  /// In en, this message translates to:
+  /// **'Create Note'**
+  String get createNote;
+
   /// Delete Note
   ///
   /// In en, this message translates to:
@@ -374,6 +380,48 @@ abstract class Strings {
   /// In en, this message translates to:
   /// **'Note not found. Try a different keyword.'**
   String get noteNotFound;
+
+  /// About Scriber
+  ///
+  /// In en, this message translates to:
+  /// **'About Scriber'**
+  String get aboutScriber;
+
+  /// Designed by: Samuel Akabo
+  ///
+  /// In en, this message translates to:
+  /// **'Designed by: {name}'**
+  String designedBy(String name);
+
+  /// Redesigned by: Samuel Akabo
+  ///
+  /// In en, this message translates to:
+  /// **'Redesigned by: {name}'**
+  String redesignedBy(String name);
+
+  /// Illustrations by: Samuel Akabo
+  ///
+  /// In en, this message translates to:
+  /// **'Illustrations by: {name}'**
+  String illustrationsBy(String name);
+
+  /// Icons by: Samuel Akabo
+  ///
+  /// In en, this message translates to:
+  /// **'Icons by: {name}'**
+  String iconsBy(String name);
+
+  /// Font by: Samuel Akabo
+  ///
+  /// In en, this message translates to:
+  /// **'Font by: {name}'**
+  String fontBy(String name);
+
+  /// Made with Flutter 💙 by: Samuel Akabo
+  ///
+  /// In en, this message translates to:
+  /// **'Made with Flutter 💙 by: {name}'**
+  String madeWithFlutter(String name);
 }
 
 class _StringsDelegate extends LocalizationsDelegate<Strings> {

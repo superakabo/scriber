@@ -10,6 +10,7 @@ import 'package:scriber/src/widgets/status_bottom_sheet.dart';
 import '../../routes.dart';
 import '../../utilities/constants/font_variations.dart';
 import '../../utilities/localizations/strings.dart';
+import '../../widgets/app_bar_button.dart';
 
 class PreviewNote extends HookConsumerWidget {
   final NotesModel note;
@@ -62,26 +63,10 @@ class PreviewNote extends HookConsumerWidget {
       ),
       child: Scaffold(
         appBar: AppBar(
-          leadingWidth: 68,
-          leading: IconButton.filledTonal(
-            splashRadius: 24,
-            iconSize: 20,
-            icon: const Icon(Icons.arrow_back_ios_new),
+          leadingWidth: 80,
+          leading: AppBarButton(
+            icon: Icons.arrow_back_ios_new,
             tooltip: strings.back,
-            constraints: const BoxConstraints(
-              maxHeight: 48,
-              maxWidth: 48,
-            ),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
-                theme.colorScheme.onBackground.withOpacity(0.2),
-              ),
-              shape: MaterialStateProperty.all(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-            ),
             onPressed: navigator.pop,
           ),
           actions: [
@@ -89,30 +74,14 @@ class PreviewNote extends HookConsumerWidget {
               (icon: Icons.delete, tooltip: strings.delete, action: deleteNote),
               (icon: Icons.edit, tooltip: strings.edit, action: editNote),
             ].map((e) {
-              return IconButton.filledTonal(
-                splashRadius: 24,
-                iconSize: 20,
-                icon: Icon(e.icon),
+              return AppBarButton(
+                icon: e.icon,
                 tooltip: e.tooltip,
-                constraints: const BoxConstraints(
-                  maxHeight: 48,
-                  maxWidth: 48,
-                ),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                    theme.colorScheme.onBackground.withOpacity(0.2),
-                  ),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                ),
                 onPressed: e.action,
               );
             }),
             const Padding(
-              padding: EdgeInsets.only(right: 10),
+              padding: EdgeInsets.only(right: 18),
             ),
           ],
         ),
@@ -120,7 +89,7 @@ class PreviewNote extends HookConsumerWidget {
           child: ListView(
             padding: const EdgeInsets.symmetric(
               vertical: 24,
-              horizontal: 18,
+              horizontal: 24,
             ),
             children: [
               Text(

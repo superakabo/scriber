@@ -12,6 +12,7 @@ import 'package:scriber/src/routes/settings/theme_changer.dart';
 import '../../routes.dart';
 import '../../utilities/constants/font_variations.dart';
 import '../../utilities/localizations/strings.dart';
+import '../../widgets/app_bar_button.dart';
 import '../../widgets/status_bottom_sheet.dart';
 
 class Settings extends HookConsumerWidget {
@@ -43,6 +44,12 @@ class Settings extends HookConsumerWidget {
       );
     }
 
+    void showAboutScriber() {
+      navigator.pushNamed(
+        Routes.aboutScriber.path,
+      );
+    }
+
     void showThemes() {
       final widget = ThemeChanger(onTap: bottomSheet.dismiss);
       bottomSheet
@@ -64,26 +71,10 @@ class Settings extends HookConsumerWidget {
       ),
       child: Scaffold(
         appBar: AppBar(
-          leadingWidth: 68,
-          leading: IconButton.filledTonal(
-            splashRadius: 24,
-            iconSize: 20,
-            icon: const Icon(Icons.arrow_back_ios_new),
+          leadingWidth: 80,
+          leading: AppBarButton(
+            icon: Icons.arrow_back_ios_new,
             tooltip: strings.back,
-            constraints: const BoxConstraints(
-              maxHeight: 48,
-              maxWidth: 48,
-            ),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
-                theme.colorScheme.onBackground.withOpacity(0.2),
-              ),
-              shape: MaterialStateProperty.all(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-            ),
             onPressed: navigator.pop,
           ),
         ),
@@ -91,7 +82,7 @@ class Settings extends HookConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 8, left: 16),
+              padding: const EdgeInsets.only(top: 8, left: 24),
               child: Text(
                 strings.settings,
                 style: theme.textTheme.headlineLarge?.copyWith(
@@ -100,8 +91,9 @@ class Settings extends HookConsumerWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 32, bottom: 8),
+              padding: const EdgeInsets.only(top: 32, bottom: 12),
               child: ListTile(
+                contentPadding: const EdgeInsets.only(left: 24),
                 leading: CircleAvatar(
                   foregroundImage: CachedNetworkImageProvider(userData.photo),
                   backgroundColor: theme.colorScheme.onBackground.withOpacity(0.2),
@@ -120,24 +112,21 @@ class Settings extends HookConsumerWidget {
             ...ListTile.divideTiles(
               context: context,
               tiles: [
-                (title: strings.languages, icon: Icons.translate),
-                (title: strings.themes, icon: Icons.palette_outlined),
-                (title: strings.signOut, icon: Icons.logout),
+                (title: strings.languages, icon: Icons.translate, action: showLanguages),
+                (title: strings.themes, icon: Icons.palette_outlined, action: showThemes),
+                (title: strings.aboutScriber, icon: Icons.info_outline, action: showAboutScriber),
+                (title: strings.signOut, icon: Icons.logout, action: signOut),
               ].map((e) {
                 return ListTile(
-                  dense: true,
                   leading: Icon(e.icon),
+                  contentPadding: const EdgeInsets.only(left: 24),
                   title: Text(
                     e.title,
                     style: theme.textTheme.bodyMedium?.copyWith(
                       fontVariations: [FontVariations.w400],
                     ),
                   ),
-                  onTap: () {
-                    if (e.title == strings.languages) return showLanguages();
-                    if (e.title == strings.themes) return showThemes();
-                    if (e.title == strings.signOut) return signOut();
-                  },
+                  onTap: e.action,
                 );
               }),
             ),

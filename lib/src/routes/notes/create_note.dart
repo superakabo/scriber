@@ -10,6 +10,7 @@ import 'package:scriber/src/widgets/status_bottom_sheet.dart';
 import '../../routes.dart';
 import '../../utilities/constants/font_variations.dart';
 import '../../utilities/localizations/strings.dart';
+import '../../widgets/app_bar_button.dart';
 
 class CreateNote extends HookConsumerWidget {
   final NotesModel note;
@@ -55,7 +56,9 @@ class CreateNote extends HookConsumerWidget {
           body: body,
           createdAt: createdAt,
         ));
-        return navigator.pop();
+        return navigator.popUntil(
+          ModalRoute.withName(Routes.notes.path),
+        );
       }
     }
 
@@ -86,6 +89,10 @@ class CreateNote extends HookConsumerWidget {
       return (!hasTitleChanges && !hasBodyChanges);
     }
 
+    void onBackPressed() {
+      return (canPop()) ? navigator.pop() : showSaveChangesPrompt();
+    }
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: FlexColorScheme.themedSystemNavigationBar(
         context,
@@ -93,59 +100,25 @@ class CreateNote extends HookConsumerWidget {
       ),
       child: WillPopScope(
         onWillPop: () {
-          (canPop()) ? navigator.pop() : showSaveChangesPrompt();
+          onBackPressed();
           return Future.value(false);
         },
         child: Scaffold(
           appBar: AppBar(
-            leadingWidth: 68,
-            leading: IconButton.filledTonal(
-              splashRadius: 24,
-              iconSize: 20,
-              icon: const Icon(Icons.close),
-              tooltip: strings.close,
-              constraints: const BoxConstraints(
-                maxHeight: 48,
-                maxWidth: 48,
-              ),
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                  theme.colorScheme.onBackground.withOpacity(0.2),
-                ),
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-              onPressed: () {
-                return (canPop()) ? navigator.pop() : showSaveChangesPrompt();
-              },
+            leadingWidth: 80,
+            leading: AppBarButton(
+              icon: Icons.arrow_back_ios_new,
+              tooltip: strings.back,
+              onPressed: onBackPressed,
             ),
             actions: [
-              IconButton.filledTonal(
-                splashRadius: 24,
-                iconSize: 20,
-                icon: const Icon(Icons.save),
-                tooltip: strings.close,
-                constraints: const BoxConstraints(
-                  maxHeight: 48,
-                  maxWidth: 48,
-                ),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                    theme.colorScheme.onBackground.withOpacity(0.2),
-                  ),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                ),
+              AppBarButton(
+                icon: Icons.save,
+                tooltip: strings.back,
                 onPressed: saveNote,
               ),
               const Padding(
-                padding: EdgeInsets.only(right: 10),
+                padding: EdgeInsets.only(right: 18),
               ),
             ],
           ),
@@ -153,7 +126,7 @@ class CreateNote extends HookConsumerWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 24,
-                horizontal: 18,
+                horizontal: 24,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,6 +136,7 @@ class CreateNote extends HookConsumerWidget {
                     maxLines: null,
                     autofocus: true,
                     textCapitalization: TextCapitalization.sentences,
+                    textInputAction: TextInputAction.done,
                     decoration: InputDecoration(
                       hintText: strings.title,
                       contentPadding: EdgeInsets.zero,

@@ -38,6 +38,7 @@
   "typeSomething": "Tapez quelque chose...",
   "titleCannotBeEmpty": "Le titre ne peut pas être vide.",
   "bodyCannotBeEmpty": "Le corps ne peut pas être vide.",
+  "createNote": "Créer une note",
   "deleteNote": "Delete Note",
   "thisActionIsIrreversible": "Cette action est irréversible. Procéder?",
   "yesDeleteIt": "Oui, supprimez-le.",
@@ -46,5 +47,12 @@
   "doYouWantToSaveYourChanges": "Voulez-vous enregistrer vos modifications?",
   "discard": "Jeter",
   "searchByTheKeyword": "Recherche par mot clé...",
-  "noteNotFound": "Remarque introuvable. Essayez un autre mot-clé."
+  "noteNotFound": "Remarque introuvable. Essayez un autre mot-clé.",
+  "aboutScriber": "À propos de Scriber",
+  "designedBy": "Conçu par: {name}",
+  "redesignedBy": "Redessiné par: {name}",
+  "illustrationsBy": "Illustrations par: {name}",
+  "iconsBy": "Icônes par: {name}",
+  "fontBy": "Police by: {name}",
+  "madeWithFlutter": "Réalisé avec Flutter 💙 par: {name}"
 }

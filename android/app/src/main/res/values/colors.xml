@@ -2,4 +2,5 @@
 <resources>
     <color name="primaryColor">#FFFFFF</color>
     <color name="secondaryColor">#FF1A191D</color>
+    <color name="tertiaryColor">#FFBDBDBD</color>
 </resources>
