@@ -41,6 +41,27 @@ apps](https://flutter.dev/docs/development/accessibility-and-localization/intern
 
 ## Screenshots
 
-![Welcome](screenshots/Screenshot_20230708-132218.png)  ![Google Login](screenshots/Screenshot_20230708-133421.png)  ![All Notes](screenshots/Screenshot_20230708-133545.png)
-
-![Notes Details](screenshots/Screenshot_20230708-134049.png)  ![Settings](screenshots/Screenshot_20230708-133818.png)  ![About Scriber](screenshots/Screenshot_20230708-133940.png) 
+<table>
+  <tr>
+    <td>
+      <img src="screenshots/Screenshot_20230708-132218.png" alt="Welcome">
+    </td>
+    <td>
+      <img src="screenshots/Screenshot_20230708-133421.png" alt="Google Login">
+    </td>
+    <td>
+      <img src="screenshots/Screenshot_20230708-133545.png" alt="All Notes">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="screenshots/Screenshot_20230708-134049.png" alt="Notes Details">
+    </td>
+    <td>
+      <img src="screenshots/Screenshot_20230708-133818.png" alt="Settings">
+    </td>
+    <td>
+      <img src="screenshots/Screenshot_20230708-133940.png" alt="About Scriber">
+    </td>
+  </tr>
+</table>
