@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scriber/src/providers/locale_provider.dart';
 
 import '../../utilities/constants/font_variations.dart';
+import '../../utilities/constants/keys.dart';
 import '../../utilities/localizations/strings.dart';
 
 class LanguageChanger extends HookConsumerWidget {
@@ -34,10 +35,11 @@ class LanguageChanger extends HookConsumerWidget {
           ),
         ),
         ...[
-          (title: strings.english, icon: Icons.translate, code: 'en'),
-          (title: strings.french, icon: Icons.translate, code: 'fr'),
+          (key: Keys.englishListTile, title: strings.english, icon: Icons.translate, code: 'en'),
+          (key: Keys.frenchListTile, title: strings.french, icon: Icons.translate, code: 'fr'),
         ].map((e) {
           return ListTile(
+            key: e.key,
             dense: true,
             leading: Icon(e.icon),
             trailing: Visibility(
@@ -55,7 +57,7 @@ class LanguageChanger extends HookConsumerWidget {
               ),
             ),
             onTap: () {
-              setLocale.setThemeMode(Locale(e.code));
+              setLocale.setLocale(Locale(e.code));
               onTap();
             },
           );

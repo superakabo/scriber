@@ -17,7 +17,7 @@ class _StateNotifier extends StateNotifier<Locale> {
 
   final SharedPreferences? prefs;
 
-  Future<void> setThemeMode(Locale mode) async {
+  Future<void> setLocale(Locale mode) async {
     prefs?.setString(Properties.languageCode, mode.languageCode);
     if (mounted) state = mode;
   }

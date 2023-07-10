@@ -7,18 +7,17 @@ import '../utilities/constants/properties.dart';
 
 final themeModeProvider = StateNotifierProvider<_StateNotifier, ThemeMode>((ref) {
   final prefs = ref.watch(sharedPreferencesProvider);
-  final index = prefs?.getInt(Properties.themeMode) ?? ThemeMode.dark.index;
-  final themeMode = ThemeMode.values.elementAt(index);
+  final index = prefs?.getInt(Properties.themeMode);
+  final themeMode = (index == null) ? ThemeMode.dark : ThemeMode.values[index];
   return _StateNotifier(prefs, themeMode);
 });
 
 class _StateNotifier extends StateNotifier<ThemeMode> {
+  final SharedPreferences? prefs;
   _StateNotifier(this.prefs, super.state);
 
-  final SharedPreferences? prefs;
-
   Future<void> setThemeMode(ThemeMode mode) async {
-    prefs?.setInt(Properties.themeMode, mode.index);
     if (mounted) state = mode;
+    prefs?.setInt(Properties.themeMode, mode.index);
   }
 }

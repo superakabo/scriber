@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -16,6 +15,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../providers/authentication_provider.dart';
 import '../../routes.dart';
+import '../../utilities/constants/keys.dart';
 import '../../utilities/constants/lotties.dart';
 import '../../utilities/constants/svgs.dart';
 import '../../utilities/constants/urls.dart';
@@ -63,9 +63,9 @@ class SignInWithGoogle extends HookConsumerWidget {
 
     /// Mark: sign in with Google
     Future<void> attemptSignInWithGoogle() async {
-      final (:credential, :exception) = await authProvider.signInWithGoogle(strings);
+      final (:credential, :exception) = await authProvider.signInWithGoogle();
       if (credential != null) onAuthenticationCompleted(credential);
-      if (exception != null) showException(exception);
+      if (exception != null) showException(AuthException.from(exception, strings));
     }
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -120,6 +120,7 @@ class SignInWithGoogle extends HookConsumerWidget {
                   ),
                   const Spacer(),
                   OutlinedButton.icon(
+                    key: Keys.signInButton,
                     style: OutlinedButton.styleFrom(
                       textStyle: theme.textTheme.bodyLarge,
                       fixedSize: const Size.fromHeight(48),
@@ -153,28 +154,28 @@ class SignInWithGoogle extends HookConsumerWidget {
           bottomNavigationBar: IntrinsicHeight(
             child: Padding(
               padding: const EdgeInsets.only(bottom: 32),
-              child: Text.rich(
-                textScaleFactor: min(1, textScaleFactor),
-                textAlign: TextAlign.center,
-                TextSpan(
-                  text: '${strings.byContinuingYouAgreeToOur} ',
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    fontVariations: [
-                      FontVariations.w500,
+              child: GestureDetector(
+                onTap: () => launchUrlString(Urls.termsConditions),
+                child: Text.rich(
+                  key: Keys.termsAndConditions,
+                  textScaleFactor: min(1, textScaleFactor),
+                  textAlign: TextAlign.center,
+                  TextSpan(
+                    text: '${strings.byContinuingYouAgreeToOur} ',
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      fontVariations: [
+                        FontVariations.w500,
+                      ],
+                    ),
+                    children: [
+                      TextSpan(
+                        text: strings.termsAndConditions,
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          color: theme.colorScheme.primary,
+                        ),
+                      ),
                     ],
                   ),
-                  children: [
-                    TextSpan(
-                      text: strings.termsAndConditions,
-                      style: theme.textTheme.bodySmall?.copyWith(
-                        color: theme.colorScheme.primary,
-                      ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          launchUrlString(Urls.termsConditions);
-                        },
-                    ),
-                  ],
                 ),
               ),
             ),

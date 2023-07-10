@@ -11,6 +11,7 @@ import 'package:scriber/src/routes/settings/theme_changer.dart';
 
 import '../../routes.dart';
 import '../../utilities/constants/font_variations.dart';
+import '../../utilities/constants/keys.dart';
 import '../../utilities/localizations/strings.dart';
 import '../../widgets/app_bar_button.dart';
 import '../../widgets/status_bottom_sheet.dart';
@@ -73,6 +74,7 @@ class Settings extends HookConsumerWidget {
         appBar: AppBar(
           leadingWidth: 80,
           leading: AppBarButton(
+            key: Keys.backButton,
             icon: Icons.arrow_back_ios_new,
             tooltip: strings.back,
             onPressed: navigator.pop,
@@ -112,12 +114,33 @@ class Settings extends HookConsumerWidget {
             ...ListTile.divideTiles(
               context: context,
               tiles: [
-                (title: strings.languages, icon: Icons.translate, action: showLanguages),
-                (title: strings.themes, icon: Icons.palette_outlined, action: showThemes),
-                (title: strings.aboutScriber, icon: Icons.info_outline, action: showAboutScriber),
-                (title: strings.signOut, icon: Icons.logout, action: signOut),
+                (
+                  key: Keys.languagesListTile,
+                  title: strings.languages,
+                  icon: Icons.translate,
+                  action: showLanguages,
+                ),
+                (
+                  key: Keys.themesListTile,
+                  title: strings.themes,
+                  icon: Icons.palette_outlined,
+                  action: showThemes,
+                ),
+                (
+                  key: Keys.aboutScriberListTile,
+                  title: strings.aboutScriber,
+                  icon: Icons.info_outline,
+                  action: showAboutScriber
+                ),
+                (
+                  key: Keys.signOutListTile,
+                  title: strings.signOut,
+                  icon: Icons.logout,
+                  action: signOut,
+                ),
               ].map((e) {
                 return ListTile(
+                  key: e.key,
                   leading: Icon(e.icon),
                   contentPadding: const EdgeInsets.only(left: 24),
                   title: Text(

@@ -45,3 +45,6 @@ app.*.map.json
 
 # Firebase Options codegen
 lib/firebase_options.dart
+
+# Patrol Tests
+integration_test/test_bundle.dart

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../models/notes_model.dart';
+import '../../models/note_model.dart';
 import '../../routes.dart';
 import '../../utilities/constants/font_variations.dart';
+import '../../utilities/constants/keys.dart';
 
 class NotesCard extends StatelessWidget {
   final Color color;
-  final NotesModel note;
+  final NoteModel note;
 
   const NotesCard({
     required this.note,
@@ -20,6 +21,7 @@ class NotesCard extends StatelessWidget {
     final theme = Theme.of(context);
 
     return InkWell(
+      key: Keys.noteCard,
       onTap: () => Navigator.of(context).pushNamed(
         Routes.previewNote.path,
         arguments: note,

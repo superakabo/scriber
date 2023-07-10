@@ -104,10 +104,6 @@
   "@themes": {
     "description": "Themes"
   },
-  "defaultTheme": "Default Theme",
-  "@defaultTheme": {
-    "description": "Default Theme"
-  },
   "lightTheme": "Light Theme",
   "@lightTheme": {
     "description": "Light Theme"

@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:scriber/src/models/notes_model.dart';
+import 'package:scriber/src/models/note_model.dart';
 import 'package:scriber/src/providers/notes_provider.dart';
 import 'package:scriber/src/widgets/status_bottom_sheet.dart';
 
 import '../../routes.dart';
 import '../../utilities/constants/font_variations.dart';
+import '../../utilities/constants/keys.dart';
 import '../../utilities/localizations/strings.dart';
 import '../../widgets/app_bar_button.dart';
 
 class CreateNote extends HookConsumerWidget {
-  final NotesModel note;
+  final NoteModel note;
 
   const CreateNote({
     required this.note,
@@ -107,12 +108,14 @@ class CreateNote extends HookConsumerWidget {
           appBar: AppBar(
             leadingWidth: 80,
             leading: AppBarButton(
+              key: Keys.backButton,
               icon: Icons.arrow_back_ios_new,
               tooltip: strings.back,
               onPressed: onBackPressed,
             ),
             actions: [
               AppBarButton(
+                key: Keys.saveButton,
                 icon: Icons.save,
                 tooltip: strings.back,
                 onPressed: saveNote,
@@ -132,6 +135,7 @@ class CreateNote extends HookConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextField(
+                    key: Keys.titleTextField,
                     controller: titleController,
                     maxLines: null,
                     autofocus: true,
@@ -150,6 +154,7 @@ class CreateNote extends HookConsumerWidget {
                   ),
                   Expanded(
                     child: TextField(
+                      key: Keys.bodyTextField,
                       controller: bodyController,
                       maxLines: null,
                       expands: true,

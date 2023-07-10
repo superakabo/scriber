@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:scriber/src/models/notes_model.dart';
+import 'package:scriber/src/models/note_model.dart';
 
 import 'routes/authentication/sign_in_with_google.dart';
 import 'routes/notes/create_note.dart';
@@ -27,14 +27,14 @@ class Routes {
     path: '/create-note',
     fullscreen: true,
     builder: (args) => CreateNote(
-      note: args as NotesModel,
+      note: args as NoteModel,
     ),
   );
 
   static final previewNote = _RouteConfig(
     path: '/preview-note',
     builder: (args) => PreviewNote(
-      note: args as NotesModel,
+      note: args as NoteModel,
     ),
   );
 

@@ -9,4 +9,5 @@ class Properties {
   static const String body = 'body';
   static const String title = 'title';
   static const String userId = 'user_id';
+  static const String testMode = 'test_mode';
 }

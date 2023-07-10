@@ -83,9 +83,6 @@ class StringsFr extends Strings {
   String get themes => 'Thèmes';
 
   @override
-  String get defaultTheme => 'Thème par défaut';
-
-  @override
   String get lightTheme => 'Thème Lumière';
 
   @override

@@ -2,14 +2,23 @@ import 'package:equatable/equatable.dart';
 
 import '../utilities/constants/properties.dart';
 
-class NotesModel with EquatableMixin {
+class NoteModel with EquatableMixin {
+  /// Mark: the unique note identifier.
   final String id;
+
+  /// Mark: the title of the note.
   final String title;
+
+  /// Mark: the content of the note.
   final String body;
+
+  /// Mark: the identifier of the user that created the note.
   final String userId;
+
+  /// Mark: the note creation date in timestamp (milliseconds).
   final int createdAt;
 
-  const NotesModel.raw({
+  const NoteModel.raw({
     required this.id,
     required this.title,
     required this.body,
@@ -17,10 +26,10 @@ class NotesModel with EquatableMixin {
     required this.createdAt,
   });
 
-  factory NotesModel() => NotesModel.fromMap(null);
+  factory NoteModel() => NoteModel.fromMap(null);
 
-  factory NotesModel.fromMap(Map<String, dynamic>? data) {
-    return NotesModel.raw(
+  factory NoteModel.fromMap(Map<String, dynamic>? data) {
+    return NoteModel.raw(
       id: data?[Properties.id] ?? '',
       title: data?[Properties.title] ?? '',
       body: data?[Properties.body] ?? '',
@@ -29,14 +38,14 @@ class NotesModel with EquatableMixin {
     );
   }
 
-  NotesModel copyWith({
+  NoteModel copyWith({
     String? id,
     String? title,
     String? body,
     String? userId,
     int? createdAt,
   }) {
-    return NotesModel.raw(
+    return NoteModel.raw(
       id: id ?? this.id,
       title: title ?? this.title,
       body: body ?? this.body,

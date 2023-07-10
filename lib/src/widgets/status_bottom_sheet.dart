@@ -4,6 +4,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:scriber/src/utilities/constants/font_variations.dart';
 
+import '../utilities/constants/keys.dart';
+
 typedef BottomSheetData = ({
   StatusData? statusData,
   Widget? widget,
@@ -208,6 +210,7 @@ class _InfoWidget extends StatelessWidget {
               if (data.positiveButtonText.isNotEmpty)
                 Expanded(
                   child: ElevatedButton(
+                    key: Keys.bsPositiveButton,
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
                       fixedSize: const Size.fromHeight(48),
@@ -233,6 +236,7 @@ class _InfoWidget extends StatelessWidget {
               if (data.negativeButtonText.isNotEmpty)
                 Expanded(
                   child: ElevatedButton(
+                    key: Keys.bsNegativeButton,
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
                       fixedSize: const Size.fromHeight(48),

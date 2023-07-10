@@ -3,10 +3,19 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:scriber/src/utilities/constants/properties.dart';
 
 class UserModel with EquatableMixin {
+  /// Mark: the unique user identifier.
   final String id;
+
+  /// Mark: the name of the user.
   final String name;
+
+  /// Mark: the photo/avatar of the user.
   final String photo;
+
+  /// Mark: the email address of the user.
   final String emailAddress;
+
+  /// Mark: the user account creation date in timestamp (milliseconds).
   final int createdAt;
 
   const UserModel.raw({

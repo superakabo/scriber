@@ -83,9 +83,6 @@ class StringsEn extends Strings {
   String get themes => 'Themes';
 
   @override
-  String get defaultTheme => 'Default Theme';
-
-  @override
   String get lightTheme => 'Light Theme';
 
   @override

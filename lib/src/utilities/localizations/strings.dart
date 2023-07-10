@@ -249,12 +249,6 @@ abstract class Strings {
   /// **'Themes'**
   String get themes;
 
-  /// Default Theme
-  ///
-  /// In en, this message translates to:
-  /// **'Default Theme'**
-  String get defaultTheme;
-
   /// Light Theme
   ///
   /// In en, this message translates to:

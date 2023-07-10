@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:scriber/src/models/notes_model.dart';
+import 'package:scriber/src/models/note_model.dart';
 import 'package:scriber/src/providers/notes_provider.dart';
 
 import '../../../themes.dart';
+import '../../utilities/constants/keys.dart';
 import '../../utilities/localizations/strings.dart';
 import '../../widgets/app_bar_button.dart';
 import 'no_note.dart';
@@ -27,11 +28,13 @@ class SearchNotes extends HookConsumerWidget {
       appBar: AppBar(
         leadingWidth: 80,
         leading: AppBarButton(
+          key: Keys.backButton,
           icon: Icons.arrow_back_ios_new,
           tooltip: strings.back,
           onPressed: navigator.pop,
         ),
         bottom: SearchBar(
+          key: Keys.searchTextField,
           onSearch: (text) {
             if (text.isEmpty) {
               filteredNotes.value = notesRecord.notes;
@@ -44,11 +47,12 @@ class SearchNotes extends HookConsumerWidget {
           },
         ),
       ),
-      body: ValueListenableBuilder<List<NotesModel>>(
+      body: ValueListenableBuilder<List<NoteModel>>(
         valueListenable: filteredNotes,
         builder: (context, notes, __) {
           return CustomScrollView(
             physics: const BouncingScrollPhysics(),
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             slivers: [
               if (notes.isEmpty)
                 SliverFillRemaining(
@@ -97,7 +101,7 @@ class SearchBar extends HookConsumerWidget implements PreferredSizeWidget {
     final controller = useTextEditingController();
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding: const EdgeInsets.only(left: 24, right: 24, bottom: 8),
       child: TextField(
         controller: controller,
         style: theme.textTheme.bodyMedium,
@@ -141,5 +145,5 @@ class SearchBar extends HookConsumerWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(50);
+  Size get preferredSize => const Size.fromHeight(58);
 }

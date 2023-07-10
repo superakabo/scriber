@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:scriber/src/models/notes_model.dart';
+import 'package:scriber/src/models/note_model.dart';
 import 'package:scriber/src/providers/notes_provider.dart';
 import 'package:scriber/src/widgets/status_bottom_sheet.dart';
 
 import '../../routes.dart';
 import '../../utilities/constants/font_variations.dart';
+import '../../utilities/constants/keys.dart';
 import '../../utilities/localizations/strings.dart';
 import '../../widgets/app_bar_button.dart';
 
 class PreviewNote extends HookConsumerWidget {
-  final NotesModel note;
+  final NoteModel note;
 
   const PreviewNote({
     required this.note,
@@ -71,10 +72,11 @@ class PreviewNote extends HookConsumerWidget {
           ),
           actions: [
             ...[
-              (icon: Icons.delete, tooltip: strings.delete, action: deleteNote),
-              (icon: Icons.edit, tooltip: strings.edit, action: editNote),
+              (key: Keys.deleteButton, icon: Icons.delete, tooltip: strings.delete, action: deleteNote),
+              (key: Keys.editButton, icon: Icons.edit, tooltip: strings.edit, action: editNote),
             ].map((e) {
               return AppBarButton(
+                key: e.key,
                 icon: e.icon,
                 tooltip: e.tooltip,
                 onPressed: e.action,

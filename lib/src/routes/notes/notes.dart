@@ -3,12 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:scriber/src/models/notes_model.dart';
+import 'package:scriber/src/models/note_model.dart';
 import 'package:scriber/src/providers/notes_provider.dart';
 import 'package:scriber/src/utilities/constants/font_variations.dart';
 import 'package:scriber/themes.dart';
 
 import '../../routes.dart';
+import '../../utilities/constants/keys.dart';
 import '../../utilities/localizations/strings.dart';
 import '../../widgets/app_bar_button.dart';
 import 'no_note.dart';
@@ -49,13 +50,14 @@ class Notes extends HookConsumerWidget {
               ),
               actions: [
                 ...[
-                  (icon: Icons.search, tooltip: strings.search, route: Routes.searchNote.path),
-                  (icon: Icons.settings, tooltip: strings.settings, route: Routes.settings.path),
+                  (key: Keys.searchButton, icon: Icons.search, tooltip: strings.search, route: Routes.searchNote),
+                  (key: Keys.settingsButton, icon: Icons.settings, tooltip: strings.settings, route: Routes.settings),
                 ].map((e) {
                   return AppBarButton(
+                    key: e.key,
                     icon: e.icon,
                     tooltip: e.tooltip,
-                    onPressed: () => navigator.pushNamed(e.route),
+                    onPressed: () => navigator.pushNamed(e.route.path),
                   );
                 }),
                 const Padding(
@@ -109,7 +111,7 @@ class Notes extends HookConsumerWidget {
           child: const Icon(Icons.add, size: 32),
           onPressed: () => navigator.pushNamed(
             Routes.createNote.path,
-            arguments: NotesModel(),
+            arguments: NoteModel(),
           ),
         ),
       ),

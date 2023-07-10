@@ -5,8 +5,9 @@
     </style>
 
     <style name="SplashScreenTheme" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/tertiaryColor</item>
+        <item name="windowSplashScreenBackground">@color/secondaryColor</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="windowSplashScreenIconBackgroundColor">@color/primaryColor</item>
         <item name="postSplashScreenTheme">@style/NormalTheme</item>
     </style>
 

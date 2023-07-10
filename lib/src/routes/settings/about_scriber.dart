@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scriber/src/utilities/constants/font_variations.dart';
 
+import '../../utilities/constants/keys.dart';
 import '../../utilities/constants/svgs.dart';
 import '../../utilities/localizations/strings.dart';
 import '../../widgets/app_bar_button.dart';
@@ -18,6 +19,7 @@ class AboutScriber extends StatelessWidget {
       appBar: AppBar(
         leadingWidth: 80,
         leading: AppBarButton(
+          key: Keys.backButton,
           icon: Icons.arrow_back_ios_new,
           tooltip: strings.back,
           onPressed: navigator.pop,

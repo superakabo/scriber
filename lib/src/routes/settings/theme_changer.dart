@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scriber/src/providers/theme_mode_provider.dart';
 
 import '../../utilities/constants/font_variations.dart';
+import '../../utilities/constants/keys.dart';
 import '../../utilities/localizations/strings.dart';
 
 class ThemeChanger extends HookConsumerWidget {
@@ -34,11 +35,21 @@ class ThemeChanger extends HookConsumerWidget {
           ),
         ),
         ...[
-          (title: strings.defaultTheme, icon: Icons.smartphone_outlined, mode: ThemeMode.system),
-          (title: strings.lightTheme, icon: Icons.light_mode, mode: ThemeMode.light),
-          (title: strings.darkTheme, icon: Icons.dark_mode_outlined, mode: ThemeMode.dark),
+          (
+            key: Keys.lightThemeListTile,
+            title: strings.lightTheme,
+            icon: Icons.light_mode,
+            mode: ThemeMode.light,
+          ),
+          (
+            key: Keys.darkThemeListTile,
+            title: strings.darkTheme,
+            icon: Icons.dark_mode_outlined,
+            mode: ThemeMode.dark,
+          ),
         ].map((e) {
           return ListTile(
+            key: e.key,
             dense: true,
             leading: Icon(e.icon),
             trailing: Visibility(
