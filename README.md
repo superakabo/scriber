@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Unit Tests
 
-Run the command `flutter test test/tests.dart --dart-define=test_mode=true` 
+Run the command `flutter test test/tests.dart -r expanded --dart-define=test_mode=true` 
 to execute the unit tests. Tests will fail if `test_mode=true`
 is omitted or set to false.
 
@@ -62,7 +62,7 @@ apps](https://flutter.dev/docs/development/accessibility-and-localization/intern
       <img src="screenshots/Screenshot_20230708-133818.png" alt="Settings">
     </td>
     <td>
-      <img src="screenshots/Screenshot_20230708-133940.png" alt="About Scriber">
+      <img src="screenshots/Screenshot_20230711-115545.png" alt="About Scriber">
     </td>
   </tr>
 </table>
