@@ -8,7 +8,7 @@ Setup the [Flutter SDK](https://docs.flutter.dev/get-started/install)
 and clone this repository [Scriber](https://github.com/superakabo/scriber.git).
 
 Create a project on [Firebase](console.firebase.google.com/) and setup the
-[FlutterFire CLI](https://pub.dev/packages/flutterfire_cli) and 
+[FlutterFire CLI](https://pub.dev/packages/flutterfire_cli) and the
 [Patrol CLI](https://pub.dev/packages/patrol_cli).
 
 For help getting started with Flutter development, view the
